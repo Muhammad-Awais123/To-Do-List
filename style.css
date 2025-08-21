@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: #f5f5f5;
+    font-family: 'Outfit', sans-serif;
+    background: #111;
+    line-height: 1.6;
+}
+
+/* ===== Header & Navbar ===== */
+header {
+    margin-top: 30px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+}
+
+nav ul {
+    display: flex;
+    gap: 25px;
+}
+
+nav li {
+    list-style: none;
+}
+
+nav li a {
+    text-decoration: none;
+    color: #f5f5f5;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav li a:hover {
+    color: #ff6347;
+}
+
+/* ===== Main Container ===== */
+.container {
+  max-width: 600px;
+  margin: 60px auto;
+  background: #1a1a1a;
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid #2c2c2c;
+}
+
+/* ===== Input Section ===== */
+.input-data {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.input-data input {
+  flex: 1;
+  padding: 12px 14px;
+  border-radius: 6px;
+  border: 1px solid #333;
+  outline: none;
+  font-size: 15px;
+  background: #222;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.input-data input:focus {
+  border-color: #ff6347;
+  background: #2a2a2a;
+}
+
+.input-data button {
+  padding: 12px 20px;
+  background: #ff6347;
+  color: #fff;
+  font-size: 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.input-data button:hover {
+  background: #e7533a;
+}
+
+/* ===== Task List ===== */
+.output-conatiner {
+  margin-top: 15px;
+}
+
+.task-list {
+  list-style: none;
+}
+
+.task-list li {
+  background: #222;
+  margin-bottom: 10px;
+  padding: 12px 14px;
+  border-radius: 6px;
+  font-size: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.3s;
+  position: relative;
+}
+.task-list li::before{
+  background-image: url("/images/unchecked.png");
+  position: absolute;
+}
+
+.task-list li:hover {
+  background: #2c2c2c;
+}
+
+/* ===== Footer ===== */
+.footer {
+    background: #111;
+    color: #eee;
+    padding: 30px 20px;
+    text-align: center;
+    border-top: 1px solid #222;
+    margin-top: 40px;
+}
+
+.footer-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.footer-logo {
+    height: 35px;
+}
+
+.footer-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ff6347;
+}
+
+.footer-text {
+    font-size: 13px;
+    margin-bottom: 15px;
+    color: #aaa;
+}
+
+.footer-links a {
+    display: inline-block;
+    margin: 5px 12px;
+    color: #ff8870;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: #fff;
+}
+
+.social-icons {
+    margin: 15px 0;
+}
+
+.social-icons a {
+    margin: 0 8px;
+    font-size: 20px;
+    color: #ddd;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    color: #ff6347;
+    transform: scale(1.15);
+}
+
+.footer-bottom {
+    margin-top: 15px;
+    font-size: 12px;
+    color: #777;
+}
+
+/* ===== Logo Alignment ===== */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo img {
+    width: 35px;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 15px;
+    padding: 0 20px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .container {
+    margin: 30px 15px;
+    padding: 20px;
+  }
+
+  .input-data {
+    flex-direction: column;
+  }
+
+  .input-data input,
+  .input-data button {
+    width: 100%;
+  }
+
+  .footer-header {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  nav li a {
+    font-size: 14px;
+  }
+
+  .footer-title {
+    font-size: 18px;
+  }
+
+  .social-icons a {
+    font-size: 18px;
+  }
+}
+/* ======= After Javascript Changes  */
+/* The cross delete button */
+.task-list span {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  line-height: 28px;
+  text-align: center;
+  font-weight: 700;
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid tomato;
+  background: tomato;
+  transition: background .15s ease, transform .1s ease, box-shadow .15s ease;
+  border-radius: 50%;
+}
+
+.task-list  span:hover {
+  background: rgb(250, 38, 0);          /* subtle red tint */
+  box-shadow: 0 2px 8px rgba(255, 0, 0, 0.12);
+}
+
+.task-list  span:active {
+  transform: translateY(-50%) scale(0.95);
+}

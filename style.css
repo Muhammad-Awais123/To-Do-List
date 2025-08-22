@@ -1,284 +1,282 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
 
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    color: #f5f5f5;
-    font-family: 'Outfit', sans-serif;
-    background: #111;
-    line-height: 1.6;
+  font-family: 'Outfit', sans-serif;
+  background: linear-gradient(135deg, #3F5EFB 0%, #FC466B 100%);
+  color: #222;
+  min-height: 100vh;
+
 }
 
-/* ===== Header & Navbar ===== */
+/* ===== Navbar ===== */
 header {
-    margin-top: 30px;
+  padding: 20px 40px;
 }
 
 nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav .logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+nav .logo img {
+  width: 32px;
+}
+
+nav h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
 }
 
 nav ul {
-    display: flex;
-    gap: 25px;
+  display: flex;
+  gap: 20px;
 }
 
-nav li {
-    list-style: none;
+nav ul li {
+  list-style: none;
 }
 
-nav li a {
-    text-decoration: none;
-    color: #f5f5f5;
-    font-weight: 500;
-    transition: 0.3s;
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
-nav li a:hover {
-    color: #ff6347;
+nav ul li a:hover {
+  color: #ff6347;
 }
 
 /* ===== Main Container ===== */
 .container {
-  max-width: 600px;
-  margin: 60px auto;
-  background: #1a1a1a;
-  padding: 25px;
+  background: #fff;
+  max-width: 450px;
+  width: 100%;
+  margin: 40px auto;
+  padding: 30px 25px;
   border-radius: 12px;
-  border: 1px solid #2c2c2c;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.icon h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.icon img {
+  width: 28px;
 }
 
 /* ===== Input Section ===== */
 .input-data {
   display: flex;
-  gap: 10px;
+  align-items: center;
+  background: #f1f1f1;
+  border-radius: 30px;
+  padding: 5px;
   margin-bottom: 20px;
 }
 
 .input-data input {
   flex: 1;
-  padding: 12px 14px;
-  border-radius: 6px;
-  border: 1px solid #333;
+  border: none;
   outline: none;
+  background: transparent;
+  padding: 12px 15px;
   font-size: 15px;
-  background: #222;
-  color: #fff;
-  transition: 0.3s;
-}
-
-.input-data input:focus {
-  border-color: #ff6347;
-  background: #2a2a2a;
+  border-radius: 30px;
 }
 
 .input-data button {
-  padding: 12px 20px;
+  border: none;
+  outline: none;
   background: #ff6347;
   color: #fff;
+  padding: 12px 25px;
   font-size: 15px;
-  border: none;
-  border-radius: 6px;
+  border-radius: 30px;
   cursor: pointer;
   font-weight: 600;
-  transition: 0.3s;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .input-data button:hover {
-  background: #e7533a;
+  background: #ff4c32;
+  transform: translateY(-2px);
 }
 
 /* ===== Task List ===== */
-.output-conatiner {
-  margin-top: 15px;
-}
-
 .task-list {
   list-style: none;
 }
 
 .task-list li {
-  background: #222;
-  margin-bottom: 10px;
-  padding: 12px 14px;
-  border-radius: 6px;
-  font-size: 15px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  transition: 0.3s;
+  justify-content: space-between;
+  padding: 12px 8px 12px 35px;
+  font-size: 15px;
   position: relative;
-}
-.task-list li::before{
-  background-image: url("/images/unchecked.png");
-  position: absolute;
+  margin-bottom: 10px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.2s ease;
 }
 
 .task-list li:hover {
-  background: #2c2c2c;
+  background: #f9f9f9;
+}
+
+/* circle checkbox */
+.task-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  background-image: url(/images/unchecked.png);
+  background-position: center;
+  background-size: cover;
+}
+
+.task-list li.checked {
+  color: #999;
+  text-decoration: line-through;
+}
+
+.task-list li.checked::before {
+  background-image: url(/images/checked.png);
+}
+
+/* delete button */
+.task-list li span {
+  font-size: 18px;
+  font-weight: 600;
+  color: #666;
+  cursor: pointer;
+  margin-left: 15px;
+  transition: color 0.2s ease;
+}
+
+.task-list li span:hover {
+  color: #ff4c32;
 }
 
 /* ===== Footer ===== */
 .footer {
-    background: #111;
-    color: #eee;
-    padding: 30px 20px;
-    text-align: center;
-    border-top: 1px solid #222;
-    margin-top: 40px;
+  margin-top: auto;
+  color: #eee;
+  padding: 30px 20px;
+  text-align: center;
+  border-top: 1px solid #ffffff40;
 }
 
-.footer-header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    margin-bottom: 10px;
+.footer .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 10px;
 }
 
-.footer-logo {
-    height: 35px;
+.footer .logo img {
+  width: 28px;
 }
 
-.footer-title {
-    font-size: 20px;
-    font-weight: bold;
-    color: #ff6347;
+.footer .footer-logo {
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
 }
 
 .footer-text {
-    font-size: 13px;
-    margin-bottom: 15px;
-    color: #aaa;
+  font-size: 14px;
+  margin-bottom: 12px;
+  color: #fff;
 }
 
 .footer-links a {
-    display: inline-block;
-    margin: 5px 12px;
-    color: #ff8870;
-    text-decoration: none;
-    font-weight: 500;
-    transition: 0.3s;
+  margin: 0 10px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
 .footer-links a:hover {
-    color: #fff;
+  color: #ff6347;
 }
 
 .social-icons {
-    margin: 15px 0;
+  margin: 15px 0;
 }
 
 .social-icons a {
-    margin: 0 8px;
-    font-size: 20px;
-    color: #ddd;
-    transition: 0.3s;
+  margin: 0 8px;
+  font-size: 23px;
+  color: #ddd;
+  transition: color 0.3s ease, transform 0.2s ease;
 }
 
 .social-icons a:hover {
-    color: #ff6347;
-    transform: scale(1.15);
+  color: #ff6347;
+  transform: scale(1.15);
 }
 
 .footer-bottom {
-    margin-top: 15px;
-    font-size: 12px;
-    color: #777;
+  margin-top: 15px;
+  font-size: 13px;
+  color: #fff;
 }
 
-/* ===== Logo Alignment ===== */
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.logo img {
-    width: 35px;
-}
-
-/* ===== Responsive Design ===== */
-@media (max-width: 768px) {
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
   nav {
     flex-direction: column;
-    gap: 15px;
-    padding: 0 20px;
+    gap: 12px;
   }
 
   nav ul {
-    flex-direction: column;
-    gap: 15px;
+  font-size: 15px;
+    gap: 10px;
   }
 
   .container {
-    margin: 30px 15px;
+    width: 400px;
+    margin: 20px auto;
     padding: 20px;
   }
-
-  .input-data {
-    flex-direction: column;
-  }
-
-  .input-data input,
-  .input-data button {
-    width: 100%;
-  }
-
-  .footer-header {
-    flex-direction: column;
-    gap: 8px;
-  }
 }
-
-@media (max-width: 480px) {
-  body {
-    font-size: 14px;
-  }
-
-  nav li a {
-    font-size: 14px;
-  }
-
-  .footer-title {
-    font-size: 18px;
-  }
-
-  .social-icons a {
-    font-size: 18px;
-  }
+@media(max-width:400px){
+.container{
+  width: 300px;
 }
-/* ======= After Javascript Changes  */
-/* The cross delete button */
-.task-list span {
-  position: absolute;
-  top: 50%;
-  right: 10px;
-  width: 40px;
-  height: 40px;
-  line-height: 28px;
-  text-align: center;
-  font-weight: 700;
-  cursor: pointer;
-  user-select: none;
-  border: 1px solid tomato;
-  background: tomato;
-  transition: background .15s ease, transform .1s ease, box-shadow .15s ease;
-  border-radius: 50%;
+.input-data input {
+  width: 120px; 
 }
-
-.task-list  span:hover {
-  background: rgb(250, 38, 0);          /* subtle red tint */
-  box-shadow: 0 2px 8px rgba(255, 0, 0, 0.12);
-}
-
-.task-list  span:active {
-  transform: translateY(-50%) scale(0.95);
 }

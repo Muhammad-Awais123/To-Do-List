@@ -5,6 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/png" href="images/to-do-list.png">
   <title>To Do List | Productivity App by Awais</title>
+ <!-- SEO Meta Tags -->
+  <meta name="description" content="Stay productive with this simple To Do List app built by Muhammad Awais." />
+  <meta name="keywords" content="To Do List, Productivity App, JavaScript Project, Awais" />
+  <meta name="author" content="Muhammad Awais" />
+
+  <!-- Open Graph (Facebook, LinkedIn, etc.) -->
+  <meta property="og:title" content="To Do List | Productivity App by Awais" />
+  <meta property="og:description" content="Stay productive with this simple To Do List app built by Muhammad Awais." />
+  <meta property="og:image" content="https://your-domain.com/images/to-do-list.png" />
+  <meta property="og:url" content="https://your-domain.com" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="To Do List | Productivity App by Awais" />
+  <meta name="twitter:description" content="Stay productive with this simple To Do List app built by Muhammad Awais." />
+  <meta name="twitter:image" content="https://your-domain.com/images/to-do-list.png" />
+
   <meta name="description" content="A simple and powerful To Do App developed by Muhammad Awais. Stay organized with tasks, and connect with the developer for web development projects." />
   <meta name="keywords" content="To Do App, Task Manager, Productivity App, Muhammad Awais, Web Developer, Portfolio, Resume, Contact" />
   <link rel="stylesheet" href="style.css" />
@@ -29,11 +47,11 @@
   <main class="container">
 <div class="icon">
       <h2>TO-DO List</h2> 
-    <img src="/images/icon.png" alt="">
+    <img src="/images/icon.png" alt="To Do App Logo" >
 </div>
     <div class="input-data">
-        <input type="text" name="text" id="input">
-        <button onclick=AddTask()>Add</button>
+        <input type="text" name="text" id="input" placeholder="Enter a new task...">
+        <button onclick=AddTask() aria-label="Add Task" >Add</button>
     </div>
     <div class="output-conatiner">
         <ul class="task-list" id="tasks">
@@ -51,7 +69,7 @@
   <footer class="footer">
     <div class="footer-container">
       <div class="logo">
-        <img src="/images/to-do-list.png" alt="">
+        <img src="/images/to-do-list.png" alt="To Do App Logo" >
         <h2 class="footer-logo">To Do App</h2>
       </div>
       <p class="footer-text">Developed with  by <strong>Muhammad Awais</strong> | Web Developer & Cybersecurity Student</p>

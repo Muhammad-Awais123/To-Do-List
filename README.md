@@ -23,14 +23,6 @@ This project demonstrates the use of **DOM Manipulation** and **Event Handling**
 
 ---
 
-## 📂 Project Structure
-├── index.html # Main HTML file
-├── style.css # CSS for styling & responsiveness
-├── script.js # JavaScript functionality
-└── README.md # Project documentation
-
----
-
 ## 💻 How It Works
 1. Enter a task in the input box  
 2. Click the **Add** button or press **Enter**  
